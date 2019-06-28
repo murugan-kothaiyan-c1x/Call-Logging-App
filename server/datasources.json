@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "callLogdb": {
+    "host": "localhost",
+    "port": "5432",
+    "url": "",
+    "database": "callLog",
+    "password": "postgres",
+    "name": "callLog",
+    "username": "postgres",
+    "connector": "postgresql",
+    "connectionLimit": 20,
+    "debug": true
+  }
+}

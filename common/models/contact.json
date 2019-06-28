@@ -1,0 +1,150 @@
+{
+  "name": "deleteapi",
+  "plural": "deleteapi",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "pbd_api"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "N"
+      }
+    },
+    "name": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "type": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "type",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "createdAt": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "updatedAt": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "createdBy": {
+      "type": "String",
+      "required": false,
+      "length": 11,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "created_by",
+        "dataType": "character varying",
+        "dataLength": 11,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "updatedBy": {
+      "type": "String",
+      "required": false,
+      "length": 11,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "updated_by",
+        "dataType": "character varying",
+        "dataLength": 11,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "status": {
+      "type": "String",
+      "required": false,
+      "length": 250,
+      "precision": null,
+      "scale": null,
+      "default":"INACTIVE",
+      "postgresql": {
+        "columnName": "status",
+        "dataType": "character varying",
+        "dataLength": 250,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    }
+  },
+  "mixins": {
+    "RowCount": true
+  },
+  "scope": {
+    "order": "updatedAt DESC"
+  },
+  "validations": [],
+  "relations": {},
+  
+  "acls": [
+  
+  ],
+  "methods": {}
+  
+}
