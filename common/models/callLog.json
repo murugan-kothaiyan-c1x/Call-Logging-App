@@ -55,7 +55,7 @@
       }
     },
     "callDuration": {
-      "type": "Time",
+      "type": "any",
       "required": false,
       "length": null,
       "precision": null,
@@ -103,11 +103,7 @@
   },
   "validations": [],
   "relations": {
-      "contact": {
-        "type": "belongsTo",
-        "model": "contact",
-        "foreignKey": "contact_id"
-      }
+      
   },
   "acls": [],
   "methods": {}
