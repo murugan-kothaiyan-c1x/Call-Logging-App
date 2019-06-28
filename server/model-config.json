@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "callLog": {
+    "dataSource": "callLogdb",
+    "public": true
+  },
+  "contact": {
+    "dataSource": "callLogdb",
+    "public": true
   }
 }

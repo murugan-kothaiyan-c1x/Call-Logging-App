@@ -24,6 +24,21 @@
         "nullable": "N"
       }
     },
+    "phoneNumber": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "phone_number",
+        "dataType": "character varying",
+        "dataLength": 16,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
     "callType": {
       "type": "String",
       "required": false,
@@ -39,128 +54,20 @@
         "nullable": "N"
       }
     },
-    "email": {
-      "type": "String",
+    "callDuration": {
+      "type": "Time",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
+      "default":"00:00:00",
       "postgresql": {
-        "columnName": "email",
-        "dataType": "character varying",
+        "columnName": "call_duration",
+        "dataType": "time without time zone",
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "upmId": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "upm_id",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "snkrsFileBoxId": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "default":null,
-      "postgresql": {
-        "columnName": "snkrs_file_box_id",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "unicaFileBoxId": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "default":null,
-      "postgresql": {
-        "columnName": "unica_file_box_id",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "folderId": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "default":null,
-      "postgresql": {
-        "columnName": "folder_id",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "guid": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "guid",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "exportStatus": {
-      "type": "String",
-      "required": false,
-      "length": 25,
-      "precision": null,
-      "scale": null,
-      "default":"Not Submitted",
-      "postgresql": {
-        "columnName": "export_status",
-        "dataType": "character varying",
-        "dataLength": 25,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "exportMessage": {
-      "type": "Object",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "export_message",
-        "dataType": "json",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
+        "nullable": "N"
       }
     },
     "createdAt": {
@@ -171,26 +78,38 @@
       "scale": null,
       "postgresql": {
         "columnName": "created_at",
-        "dataType": "time without time zone",
+        "dataType": "timestamp without time zone",
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "N"
       }
+    },
+    "contactId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "contact_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
     }
   },
-  "mixins": {
-    "RowCount": true
-  },
-  "scope": {
-    "order": "updatedAt DESC"
-  },
   "validations": [],
-  "relations": {},
-  
-  "acls": [
-  
-  ],
+  "relations": {
+      "contact": {
+        "type": "belongsTo",
+        "model": "contact",
+        "foreignKey": "contact_id"
+      }
+  },
+  "acls": [],
   "methods": {}
   
 }

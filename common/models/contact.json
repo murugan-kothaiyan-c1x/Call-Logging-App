@@ -1,11 +1,11 @@
 {
-  "name": "deleteapi",
-  "plural": "deleteapi",
+  "name": "contact",
+  "plural": "contact",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "postgresql": {
-      "table": "pbd_api"
+      "table": "contact"
     }
   },
   "properties": {
@@ -39,105 +39,67 @@
         "nullable": "Y"
       }
     },
-    "type": {
+    "phone": {
       "type": "String",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
       "postgresql": {
-        "columnName": "type",
+        "columnName": "phone",
         "dataType": "character varying",
-        "dataLength": null,
+        "dataLength": 16,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
       }
     },
-    "createdAt": {
-      "type": "Date",
+    "address": {
+      "type": "String",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
-      "default": "$now",
       "postgresql": {
-        "columnName": "created_at",
-        "dataType": "timestamp without time zone",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "updatedAt": {
-      "type": "Date",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "default": "$now",
-      "postgresql": {
-        "columnName": "updated_at",
-        "dataType": "timestamp without time zone",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "createdBy": {
-      "type": "String",
-      "required": false,
-      "length": 11,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "created_by",
-        "dataType": "character varying",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "updatedBy": {
-      "type": "String",
-      "required": false,
-      "length": 11,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "updated_by",
-        "dataType": "character varying",
-        "dataLength": 11,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
-      }
-    },
-    "status": {
-      "type": "String",
-      "required": false,
-      "length": 250,
-      "precision": null,
-      "scale": null,
-      "default":"INACTIVE",
-      "postgresql": {
-        "columnName": "status",
+        "columnName": "address",
         "dataType": "character varying",
         "dataLength": 250,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
       }
+    },
+    "email": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "email",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "notes": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
     }
-  },
-  "mixins": {
-    "RowCount": true
-  },
-  "scope": {
-    "order": "updatedAt DESC"
+    
   },
   "validations": [],
   "relations": {},
