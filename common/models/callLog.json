@@ -25,14 +25,14 @@
       }
     },
     "phoneNumber": {
-      "type": "String",
+      "type": "Number",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
       "postgresql": {
         "columnName": "phone_number",
-        "dataType": "character varying",
+        "dataType": "bigint",
         "dataLength": 16,
         "dataPrecision": null,
         "dataScale": null,
@@ -55,15 +55,14 @@
       }
     },
     "callDuration": {
-      "type": "any",
+      "type": "Number",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
-      "default":"00:00:00",
       "postgresql": {
         "columnName": "call_duration",
-        "dataType": "time without time zone",
+        "dataType": "bigint",
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
@@ -76,6 +75,7 @@
       "length": null,
       "precision": null,
       "scale": null,
+      "default": "$now",
       "postgresql": {
         "columnName": "created_at",
         "dataType": "timestamp without time zone",
@@ -86,24 +86,31 @@
       }
     },
     "contactId": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 10,
-      "scale": 0,
-      "postgresql": {
-        "columnName": "contact_id",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 10,
-        "dataScale": 0,
-        "nullable": "Y"
+        "type": "Number",
+        "required": false,
+        "length": null,
+        "precision": 10,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "contact_id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "Y"
+        }
       }
-    }
+  },
+  "scope": {
+    "include": "contact"
   },
   "validations": [],
   "relations": {
-      
+    "contact": {
+      "type": "belongsTo",
+      "model": "contact",
+      "foreignKey": "contactId"
+    }
   },
   "acls": [],
   "methods": {}

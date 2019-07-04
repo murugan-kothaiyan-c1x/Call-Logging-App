@@ -13,7 +13,7 @@ CREATE TABLE public.call_log
     CONSTRAINT fk_call_log_contact FOREIGN KEY (contact_id)
         REFERENCES public.contact (id) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+        ON DELETE SET NULL;
 )
 WITH (
     OIDS = FALSE
